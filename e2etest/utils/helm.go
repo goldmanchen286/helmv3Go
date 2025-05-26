@@ -22,10 +22,10 @@ import (
 
 	"github.com/pkg/errors"
 	"helm.sh/helm/v3/pkg/action"
-	"helm.sh/helm/v3/pkg/kube"
 	apiextensionsv1client "k8s.io/apiextensions-apiserver/pkg/client/clientset/clientset/typed/apiextensions/v1"
 	k8serrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/cli-runtime/pkg/genericclioptions"
 	"k8s.io/client-go/rest"
 )
 
@@ -35,9 +35,13 @@ const helmDriver = "memory"
 func NewHelmDefaultConfig(t *testing.T, releaseName, releaseNamespace, kubeconfigPath string) *action.Configuration {
 	t.Helper()
 
+	flags := genericclioptions.NewConfigFlags(true)
+	flags.Namespace = &releaseNamespace
+	flags.KubeConfig = &kubeconfigPath
+	
 	actionConfig := new(action.Configuration)
 	err := actionConfig.Init(
-		kube.GetConfig(kubeconfigPath, "", releaseNamespace),
+		flags,
 		releaseNamespace,
 		helmDriver,
 		func(format string, v ...interface{}) {
