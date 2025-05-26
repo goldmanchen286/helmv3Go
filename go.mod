@@ -7,9 +7,9 @@ toolchain go1.24.1
 require (
 	github.com/golang/glog v1.2.1
 	github.com/pkg/errors v0.9.1
-	helm.sh/helm/v3 v3.17.3
+	helm.sh/helm/v3 v3.10.3
 	k8s.io/api v0.32.2
-	k8s.io/apiextensions-apiserver v0.32.2
+	k8s.io/apiextensions-apiserver v0.25.3
 	k8s.io/apimachinery v0.32.2
 	k8s.io/apiserver v0.32.2
 	k8s.io/client-go v0.32.2
@@ -71,8 +71,6 @@ require (
 	github.com/gorilla/websocket v1.5.0 // indirect
 	github.com/gosuri/uitable v0.0.4 // indirect
 	github.com/gregjones/httpcache v0.0.0-20190611155906-901d90724c79 // indirect
-	github.com/hashicorp/errwrap v1.1.0 // indirect
-	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/huandu/xstrings v1.5.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/jmoiron/sqlx v1.4.0 // indirect
@@ -119,6 +117,7 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	github.com/xeipuuv/gojsonschema v1.2.0 // indirect
 	github.com/xlab/treeprint v1.2.0 // indirect
+	go.etcd.io/etcd/api/v3 v3.5.16 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.53.0 // indirect
 	go.opentelemetry.io/otel v1.28.0 // indirect
 	go.opentelemetry.io/otel/metric v1.28.0 // indirect
